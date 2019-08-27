@@ -1,0 +1,347 @@
+
+package universidad;
+
+import formulario.frmAlumno;
+
+public class Universidad {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        frmAlumno frm = new frmAlumno();
+        frm.setVisible(true);
+        
+    }
+    
+}
+
+//Creamos una nueva clase "Alumno"
+
+package universidad;
+
+
+public class Alumno {
+    //Declarar atributos: Caracteristicas encapsuladas
+    protected String codigo;
+    protected String apellidos;
+    protected String nombres;
+    protected int edad;
+    //Declara constructores para la clase Alumno
+    //1.- Constructor sin sobrecarga de parametros
+    public Alumno()
+    {}
+    //2.- Constructor con sobrecarga de parametros
+    public Alumno(String codigo, String apellidos, String nombres, int edad)
+    {
+        this.codigo=codigo;
+        this.apellidos=apellidos;
+        this.nombres=nombres;
+        this.edad=edad;
+    }
+    //Propiedades de la Clase: Acceder a los atributos para la
+    //Lecturay escritura
+    public String getCodigo()
+    {
+        return this.codigo;
+    }
+    public String getApellidos()
+    {
+        return this.apellidos;
+    }
+    public String getNombres()
+    {
+        return this.nombres;
+    }
+    public int getEdad()
+    {
+        return this.edad;
+    }
+    //SETTER = Escritura
+    public void setCodigo(String codigo)
+    {
+        this.codigo=codigo;
+    }
+    public void setApellidos(String apellidos)
+    {
+        this.apellidos=apellidos;
+    }
+    public void setNombres(String nombres)
+    {
+        this.nombres=nombres;
+    }
+    public void setEdad(int edad)
+    {
+        this.edad=edad;
+    }
+    //Implementar metodos u operaciones
+    public String Estudiar()
+    {
+        return "El alumno tiene la obligacion de estudiar";
+    }
+    public String Asistir()
+    {
+        return "El alumnotiene la obligacion de asistir al curso los sabados";
+    }
+    public String HacerTareas()
+    {
+        return "El alumno debe hacer sus tareas";
+    }
+}
+
+//Creamos un JFrame y lo modelamos
+
+package formulario;
+
+import javax.swing.JOptionPane;
+import universidad.Alumno;
+
+
+public class frmAlumno extends javax.swing.JFrame {
+
+  
+    public frmAlumno() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        lblCodigo = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        lblApellidos = new javax.swing.JLabel();
+        lblNombres = new javax.swing.JLabel();
+        lblEdad = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
+        btnEstudiar = new javax.swing.JButton();
+        btnAsistir = new javax.swing.JButton();
+        btnHacertareas = new javax.swing.JButton();
+        txtApellidos = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblCodigo.setText("Codigo:");
+
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoActionPerformed(evt);
+            }
+        });
+
+        lblApellidos.setText("Apellidos:");
+
+        lblNombres.setText("Nombres:");
+
+        lblEdad.setText("Edad:");
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnMostrar.setText("Mostrar");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+
+        btnEstudiar.setText("Estudiar");
+        btnEstudiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstudiarActionPerformed(evt);
+            }
+        });
+
+        btnAsistir.setText("Asistir");
+        btnAsistir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsistirActionPerformed(evt);
+            }
+        });
+
+        btnHacertareas.setText("Hacer Tareas");
+        btnHacertareas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHacertareasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnEstudiar)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnAsistir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnHacertareas))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRegistrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMostrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblEdad, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNombres)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblApellidos)
+                                .addComponent(lblCodigo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtApellidos)
+                            .addComponent(txtNombres)
+                            .addComponent(txtCodigo)
+                            .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigo))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellidos)
+                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombres)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEdad)
+                    .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar)
+                    .addComponent(btnMostrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEstudiar)
+                    .addComponent(btnAsistir)
+                    .addComponent(btnHacertareas))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+    //Declarar un objeto alumno
+    static Alumno alumno=new Alumno();
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        String codigo = txtCodigo.getText().toString();
+        String apellidos = txtApellidos.getText().toString();
+        String nombres = txtNombres.getText().toString();
+        int edad = Integer.parseInt(txtEdad.getText().toString());
+        //Enviar datos al Objeto
+        alumno.setCodigo(codigo);
+        alumno.setApellidos(apellidos);
+        alumno.setNombres(nombres);
+        alumno.setEdad(edad);
+        //Mensajede verificacion completa
+        JOptionPane.showMessageDialog(rootPane,"Se registro correctamente");
+        //Limpiar las cajas de texto
+        txtCodigo.setText("");
+        txtApellidos.setText("");
+        txtNombres.setText("");
+        txtEdad.setText("");
+        //Esfocarnos en la casa de texto de Codigo
+        txtCodigo.requestFocus();
+    }                                            
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // Mostrar las propiedades del Objeto Alumno
+        String codigo = alumno.getCodigo();
+        String apellidos = alumno.getApellidos();
+        String nombres = alumno.getNombres();
+        int edad = alumno.getEdad();
+        JOptionPane.showMessageDialog(rootPane,"Codigo=" + codigo + "Apellidos=" + apellidos + "Nombres:" + nombres + "Edad:"+ String.valueOf(edad));
+        
+    }                                          
+
+    private void btnEstudiarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // Llamar al metodo estudiar del objeto Metodo
+        JOptionPane.showMessageDialog(rootPane, alumno.Estudiar().toString());
+        
+    }                                           
+
+    private void btnAsistirActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // Llamar al metodo asistir del objeto Metodo
+        JOptionPane.showMessageDialog(rootPane, alumno.Asistir().toString());
+    }                                          
+
+    private void btnHacertareasActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // Llamar al metodo Hacer tareas del objeto Metodo
+        JOptionPane.showMessageDialog(rootPane, alumno.HacerTareas().toString());
+    }                                              
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmAlumno().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnAsistir;
+    private javax.swing.JButton btnEstudiar;
+    private javax.swing.JButton btnHacertareas;
+    private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JLabel lblApellidos;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblEdad;
+    private javax.swing.JLabel lblNombres;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEdad;
+    private javax.swing.JTextField txtNombres;
+    // End of variables declaration                   
+}
