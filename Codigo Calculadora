@@ -1,0 +1,464 @@
+package calculadora;
+
+import Formularios.frmCalculadora;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        frmCalculadora frm=new frmCalculadora();
+        frm.setVisible(true);
+    }
+    
+}
+
+package calculadora;
+
+//Creamos una nueva clase llamada Operaciones
+
+public class Operaciones {
+    //atributos
+    protected double nro1;
+    protected double nro2;
+    //propiedades
+    public double getNro1()
+    {
+        return this.nro1;
+    }
+    public double getNro2()
+    {
+        return this.nro2;
+    }
+    public void setNro1(double nro1)
+    {
+        this.nro1 = nro1;
+    }
+    public void setNro2(double nro2)
+    {
+        this.nro2 = nro2;
+    }
+    //Constructores
+    // 1.- Constructor sin sobrecarga de parametros
+    public Operaciones()
+    {}
+    public Operaciones(double nro1, double nro2)
+    {
+        this.nro1 = nro1;
+        this.nro2 = nro2;
+    }
+    // Implementacion de metodos u operaciones
+    public double Sumar()
+    {
+        return this.nro1 + this.nro2;
+    }
+    public double Restar()
+    {
+        return this.nro1 - this.nro2;
+    }
+    public double Multiplicar()
+    {
+        return this.nro1 * this.nro2;
+    }
+    public String Dividir()
+    {
+        if (nro2==0)
+        {
+            return "¡¡Error: Division!!!";
+        }else{
+            double divide = this.nro1 / this.nro2;
+            return String.valueOf(divide);
+        }
+    }
+    public double Potencia()
+    {
+        double Pot = 1;
+        for (int i=1; i <= this.nro2;i++)
+        {
+            Pot *= this.nro1;
+        }
+        return Pot;
+    }
+    private double Fact(double nro)
+    {
+        if(nro==0)
+        {
+            return 1;
+        }
+        else
+            return nro*Fact(nro-1);
+    }
+    public double Factorial()
+    {
+        return Fact(this.nro1);
+    }
+    public double Raiz()
+    {
+        return Math.sqrt(this.nro1);
+    }
+    public double Seno()
+    {
+        return Math.sin(Math.toRadians(this.nro1));
+    }
+    public double Coseno()
+    {
+        return Math.cos(Math.toRadians(this.nro1));
+    }
+    public double Tangente()
+    {
+        return Math.tan(Math.toRadians(this.nro1));
+    }
+}
+
+//Creamos un JFrame y modelamos la calculadora, luego le insertamos codigo a los botones y cuadros de texto
+
+package Formularios;
+
+import calculadora.Operaciones;
+import javax.swing.JOptionPane;
+
+public class frmCalculadora extends javax.swing.JFrame {
+
+  
+    public frmCalculadora() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        btnSumar = new javax.swing.JButton();
+        btnRestar = new javax.swing.JButton();
+        btnMultiplicar = new javax.swing.JButton();
+        btnDividir = new javax.swing.JButton();
+        btnPotencia = new javax.swing.JButton();
+        btnFactorial = new javax.swing.JButton();
+        txtNro1 = new javax.swing.JTextField();
+        txtNro2 = new javax.swing.JTextField();
+        btnSeno = new javax.swing.JButton();
+        btnCoseno = new javax.swing.JButton();
+        btnTangente = new javax.swing.JButton();
+        btnRaiz = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 153, 153));
+        setFont(new java.awt.Font("Bell MT", 0, 10)); // NOI18N
+
+        btnSumar.setText("Suma");
+        btnSumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumarActionPerformed(evt);
+            }
+        });
+
+        btnRestar.setText("Restar");
+        btnRestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestarActionPerformed(evt);
+            }
+        });
+
+        btnMultiplicar.setText("Multiplicar");
+        btnMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicarActionPerformed(evt);
+            }
+        });
+
+        btnDividir.setText("Dividir");
+        btnDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDividirActionPerformed(evt);
+            }
+        });
+
+        btnPotencia.setText("Potencia");
+        btnPotencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPotenciaActionPerformed(evt);
+            }
+        });
+
+        btnFactorial.setText("Factorial");
+        btnFactorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFactorialActionPerformed(evt);
+            }
+        });
+
+        btnSeno.setText("Seno");
+        btnSeno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSenoActionPerformed(evt);
+            }
+        });
+
+        btnCoseno.setText("Coseno");
+        btnCoseno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCosenoActionPerformed(evt);
+            }
+        });
+
+        btnTangente.setText("Tangente");
+        btnTangente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTangenteActionPerformed(evt);
+            }
+        });
+
+        btnRaiz.setText("Raiz");
+        btnRaiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaizActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Nro1: ");
+
+        jLabel2.setText("Nro2: ");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(btnSeno))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(btnTangente)
+                        .addGap(77, 77, 77)
+                        .addComponent(btnRaiz)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCoseno)
+                    .addComponent(btnRestar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDividir)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addComponent(btnSumar)
+                        .addComponent(jLabel2)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnFactorial)
+                            .addComponent(btnMultiplicar))
+                        .addGap(32, 32, 32)
+                        .addComponent(btnPotencia)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNro2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 19, Short.MAX_VALUE)
+                                .addComponent(txtNro1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(113, 113, 113))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSumar)
+                    .addComponent(btnMultiplicar)
+                    .addComponent(btnPotencia)
+                    .addComponent(btnRestar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(btnDividir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnFactorial)
+                            .addComponent(btnSeno))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(btnRaiz))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnTangente))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCoseno)))
+                .addContainerGap())
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void btnRestarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        //Con sobrecarga
+        double nro1=Double.parseDouble(txtNro1.getText());
+        double nro2=Double.parseDouble(txtNro2.getText());
+        Operaciones operaciones= new Operaciones(nro1, nro2);
+        double resta=operaciones.Restar();
+        JOptionPane.showMessageDialog(rootPane, "La resta es: "+resta);
+        
+    }                                         
+
+    private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+        double nro1=Double.parseDouble(txtNro1.getText());
+        double nro2=Double.parseDouble(txtNro2.getText());
+        Operaciones operaciones=new Operaciones();
+        String dividir=operaciones.Dividir();
+        JOptionPane.showMessageDialog(rootPane, "La division es: "+dividir);
+    }                                          
+
+    private void btnPotenciaActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Operaciones operaciones=new Operaciones();
+        double nro1, nro2, potencia;
+        nro1=Double.parseDouble(txtNro1.getText());
+        nro2=Double.parseDouble(txtNro2.getText());
+        operaciones.setNro1(nro1);
+        operaciones.setNro2(nro2);
+        potencia=operaciones.Potencia();
+        JOptionPane.showMessageDialog(rootPane, "La potencia es: "+potencia);
+    }                                           
+
+    private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // Sin sobrecarga
+        Operaciones operaciones = new Operaciones();
+        double nro1, nro2, suma;
+        nro1=Double.parseDouble(txtNro1.getText());
+        nro2=Double.parseDouble(txtNro2.getText());
+        operaciones.setNro1(nro1);
+        operaciones.setNro2(nro2);
+        suma=operaciones.Sumar();
+        JOptionPane.showMessageDialog(rootPane, "La suma es: "+suma);
+    }                                        
+
+    private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+        double nro1=Double.parseDouble(txtNro1.getText());
+        double nro2=Double.parseDouble(txtNro2.getText());
+        Operaciones operaciones= new Operaciones(nro1, nro2);
+        Double multiplicar=operaciones.Multiplicar();
+        JOptionPane.showMessageDialog(rootPane, "La multiplicacion es: "+multiplicar);
+    }                                              
+
+    private void btnSenoActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        Operaciones operaciones = new Operaciones();
+        double nro1, nro2, seno;
+        nro1=Double.parseDouble(txtNro1.getText());
+        nro2=Double.parseDouble(txtNro2.getText());
+        operaciones.setNro1(nro1);
+        operaciones.setNro2(nro2);
+        seno=operaciones.Seno();
+        JOptionPane.showMessageDialog(rootPane, "El seno es: "+seno);
+    }                                       
+
+    private void btnFactorialActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        double nro1=Double.parseDouble(txtNro1.getText());
+        double nro2=Double.parseDouble(txtNro2.getText());
+        Operaciones operaciones= new Operaciones(nro1, nro2);
+        double factorial=operaciones.Factorial();
+        JOptionPane.showMessageDialog(rootPane, "El factorial es: "+factorial);
+    }                                            
+
+    private void btnCosenoActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        double nro1=Double.parseDouble(txtNro1.getText());
+        double nro2=Double.parseDouble(txtNro2.getText());
+        Operaciones operaciones= new Operaciones(nro1, nro2);
+        Double coseno=operaciones.Coseno();
+        JOptionPane.showMessageDialog(rootPane, "El coseno es: "+coseno);
+    }                                         
+
+    private void btnTangenteActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Operaciones operaciones = new Operaciones();
+        double nro1, nro2, tangente;
+        nro1=Double.parseDouble(txtNro1.getText());
+        nro2=Double.parseDouble(txtNro2.getText());
+        operaciones.setNro1(nro1);
+        operaciones.setNro2(nro2);
+        tangente=operaciones.Tangente();
+        JOptionPane.showMessageDialog(rootPane, "La tangente es: "+tangente);
+    }                                           
+
+    private void btnRaizActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        double nro1=Double.parseDouble(txtNro1.getText());
+        double nro2=Double.parseDouble(txtNro2.getText());
+        Operaciones operaciones= new Operaciones(nro1, nro2);
+        Double raiz=operaciones.Raiz();
+        JOptionPane.showMessageDialog(rootPane, "La raiz es: "+raiz);
+    }                                       
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmCalculadora().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnCoseno;
+    private javax.swing.JButton btnDividir;
+    private javax.swing.JButton btnFactorial;
+    private javax.swing.JButton btnMultiplicar;
+    private javax.swing.JButton btnPotencia;
+    private javax.swing.JButton btnRaiz;
+    private javax.swing.JButton btnRestar;
+    private javax.swing.JButton btnSeno;
+    private javax.swing.JButton btnSumar;
+    private javax.swing.JButton btnTangente;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField txtNro1;
+    private javax.swing.JTextField txtNro2;
+    // End of variables declaration                   
+}
