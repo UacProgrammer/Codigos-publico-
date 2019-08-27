@@ -1,0 +1,347 @@
+
+package appdocente;
+
+
+public class AppDocente {
+
+    public static void main(String[] args) {
+      frmDocente frm = new frmDocente();
+      frm.setVisible  (true);
+    }
+    
+}
+
+//Creamos una nueva clase llamada Docente
+
+package appdocente;
+
+public class Docente {
+//declarar aptributos :caracteristicas encapsuladas
+    protected String nombre;
+    protected String apellido;
+    protected String codigo;
+    protected String curso;
+    protected int horas;
+    
+    //declarar constructores para la clase alumno 
+    //1.-constructor sin sobrecarga de parametros
+   
+    public Docente()
+    {}
+    //2.- constructor con sobrecarga de parametros
+    public Docente(String codigo, String apellido, String nombre, String curso, int horas)
+    {
+         this.nombre = nombre;
+         this.apellido = apellido;
+         this.codigo = codigo;
+         this.curso = curso; 
+         this.horas = horas;
+         
+    }
+    //propiedades de la clase : acceder a los atributos 
+    //lectira y escritura
+    //GETER = LECTURA
+    public String getNombre()
+    {
+    return this.nombre;
+    }
+    public String getApellido()
+    {
+    return this.apellido;
+    }  
+    public String getCodigo()
+    {
+        return this.codigo;
+    }
+    public String getCurso()
+    {
+        return this.curso;
+    }
+    public int getHoras()
+    {
+    return this.horas;
+    }
+    //SETTER = ESCRITURA
+     public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    } 
+     public void setApellido(String apellido)
+    {
+        this.apellido = apellido;
+    }
+    public void setCodigo(String codigo)
+    {
+        this.codigo = codigo;
+    }
+    public void setCurso(String curso)
+    {
+        this.curso = curso;
+    }
+    public void setHoras(int horas)
+    {
+        this.horas = horas;
+    }
+//implementar metodods u operaciones
+
+public String PrepararClase()
+{
+return" El Docente debe preparar las sesiònes de clase con anticipaciòn  ";
+}
+public String Asistir()
+{
+return" El Docente debe asistir a sus sesiones de clase";
+}
+
+//Creamos un JFrame y lo modelamos
+
+package appdocente;
+
+import javax.swing.JOptionPane;
+
+
+public class frmDocente extends javax.swing.JFrame {
+
+
+    public frmDocente() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        lblNombre = new javax.swing.JLabel();
+        lblApellido = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        lblCurso = new javax.swing.JLabel();
+        lblHoras = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
+        txtCurso = new javax.swing.JTextField();
+        txtHoras = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
+        btnPreparar = new javax.swing.JButton();
+        btnAsistir = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setEnabled(false);
+        setForeground(new java.awt.Color(51, 153, 255));
+
+        lblNombre.setText("Nombre");
+
+        lblApellido.setText("Apellido");
+
+        lblCodigo.setText("Codigo");
+
+        lblCurso.setText("Curso");
+
+        lblHoras.setText("Nº Horas trabajadas");
+
+        btnRegistrar.setText("Registrarse");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnMostrar.setText("Mostrar");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+
+        btnPreparar.setText("Preparar clase");
+        btnPreparar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrepararActionPerformed(evt);
+            }
+        });
+
+        btnAsistir.setForeground(new java.awt.Color(1, 1, 1));
+        btnAsistir.setText("Asistir");
+        btnAsistir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsistirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblApellido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                                .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblNombre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblHoras)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtHoras))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCodigo)
+                                    .addComponent(lblCurso))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 37, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnPreparar)
+                            .addComponent(btnRegistrar))
+                        .addGap(93, 93, 93)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAsistir)
+                            .addComponent(btnMostrar))
+                        .addGap(75, 75, 75))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellido)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigo)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCurso)
+                    .addComponent(txtCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHoras)
+                    .addComponent(txtHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar)
+                    .addComponent(btnMostrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAsistir)
+                    .addComponent(btnPreparar))
+                .addGap(31, 31, 31))
+        );
+
+        pack();
+    }// </editor-fold>                        
+    static Docente Docente=new Docente();
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        String nombre = txtNombre.getText().toString();
+        String apellido = txtApellido.getText().toString();
+        String codigo = txtCodigo.getText().toString();
+        String curso = txtCurso.getText().toString();
+        int horas = Integer.parseInt(txtHoras.getText().toString());
+        //enviar datos al objero
+        Docente.setNombre(nombre);
+        Docente.setApellido(apellido);
+        Docente.setCodigo(codigo);
+        Docente.setCurso(curso);
+        Docente.setHoras(horas);
+        //mensaje de verificacion vorrecta
+        JOptionPane.showMessageDialog(rootPane, "se registro correctamente");
+        //limpiar las cajas de texto
+        txtCodigo.setText("");
+        txtApellido.setText("");
+        txtNombre.setText("");
+        txtCurso.setText("");
+        txtHoras.setText("");
+        //enfocamos en la caja de texto de codigo
+        txtCodigo.requestFocus();
+    }                                            
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // Mostrar las propiedades del Objeto Alumno
+        String codigo = Docente.getCodigo();
+        String apellido = Docente.getApellido();
+        String nombre = Docente.getNombre();
+        String curso = Docente.getCurso();
+        int horas = Docente.getHoras();
+        JOptionPane.showMessageDialog(rootPane,"Nombre: " + nombre + "\nApellidos: " + apellido + "\nCodigo: " + codigo + "\nCurso: "+ curso +"\nHoras: "+ String.valueOf(horas));
+        
+    }                                          
+
+    private void btnPrepararActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        JOptionPane.showMessageDialog(rootPane, Docente.PrepararClase().toString());
+    }                                           
+
+    private void btnAsistirActionPerformed(java.awt.event.ActionEvent evt) {                                           
+         JOptionPane.showMessageDialog(rootPane, Docente.Asistir().toString());
+    }                                          
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmDocente().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnAsistir;
+    private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnPreparar;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblCurso;
+    private javax.swing.JLabel lblHoras;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtCurso;
+    private javax.swing.JTextField txtHoras;
+    private javax.swing.JTextField txtNombre;
+    // End of variables declaration                   
+}
+
